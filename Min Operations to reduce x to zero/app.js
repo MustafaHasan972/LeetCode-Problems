@@ -5,6 +5,4 @@
  * @param {number} x - The target sum.
  * @return {number} The minimum number of operations.
  */
-var minOperations = function (nums, x) {
-  s;
-};
+var minOperations = function (nums, x) {};
