@@ -29,7 +29,7 @@ function romanToInteger(s) {
 
     // If the current value is greater than or equal to the next value,
     // add it to the result
-    if (currVal >= nextVal) {
+    if (currVal >= nextVal || !nextVal) {
       result += currVal;
     }
     // If the current value is less than the next value, subtract it from
@@ -42,3 +42,5 @@ function romanToInteger(s) {
   // Return the final integer value
   return result;
 }
+
+console.log(romanToInteger("III"));
