@@ -1,4 +1,4 @@
-# Find the Difference Between Two Strings (Improved)
+# Find the Difference Between Two Strings
 
 This JavaScript code defines a function `findTheDifference` that finds the character that is added to string `t` but not present in string `s`. The code uses a character count object to keep track of the characters in `s` and then checks for the extra character in `t`. This is an improved version of the previous implementation. This README.md file provides an overview of the code and how to use it.
 
