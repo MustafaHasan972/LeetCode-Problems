@@ -31,3 +31,5 @@ let champagneTower = function (poured, query_row, query_glass) {
   // Return the amount of champagne in the specified glass
   return Math.min(1, pyramid[query_row][query_glass]);
 };
+
+console;
