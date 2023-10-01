@@ -1,22 +1,39 @@
-function addTwoNumbers(l1, l2) {
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val === undefined ? 0 : val);
+ *     this.next = (next === undefined ? null : next);
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var addTwoNumbers = function (l1, l2) {
   let carry = 0;
-  let result = [];
-  let i = l1.length - 1;
-  let j = l2.length - 1;
+  let dummy = new ListNode(0); // Create a dummy node to simplify the logic
+  let current = dummy;
 
-  while (i >= 0 || j >= 0 || carry > 0) {
-    const x = i >= 0 ? l1[i] : 0;
-    const y = j >= 0 ? l2[j] : 0;
-    const sum = x + y + carry;
+  while (l1 || l2 || carry) {
+    let sum = carry;
+
+    if (l1) {
+      sum += l1.val;
+      l1 = l1.next;
+    }
+
+    if (l2) {
+      sum += l2.val;
+      l2 = l2.next;
+    }
 
     carry = Math.floor(sum / 10);
-    result.unshift(sum % 10); // Adding the remainder to the beginning of the result array
+    sum %= 10;
 
-    i--;
-    j--;
+    current.next = new ListNode(sum);
+    current = current.next;
   }
 
-  return result;
-}
-
-console.log(addTwoNumbers([1, 2, 3], [9, 8, 7]));
+  return dummy.next; // Skip the dummy node and return the result
+};
